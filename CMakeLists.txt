@@ -805,13 +805,13 @@ set(PROD_WASMRELAXEDSIMD_MICROKERNEL_SRCS
 )
 
 set(WASM32_ASM_MICROKERNEL_SRCS
-    "src/f32-vrelu/f32-vrelu-asm-wasm32-shr-x1.S",
-    "src/f32-vrelu/f32-vrelu-asm-wasm32-shr-x2.S",
-    "src/f32-vrelu/f32-vrelu-asm-wasm32-shr-x4.S",
+    src/f32-vrelu/f32-vrelu-asm-wasm32-shr-x1.S
+    src/f32-vrelu/f32-vrelu-asm-wasm32-shr-x2.S
+    src/f32-vrelu/f32-vrelu-asm-wasm32-shr-x4.S
 )
 
 IF(EMSCRIPTEN)
-  LIST(APPEND PROD_MICROKERNEL_SRCS ${PROD_WASM_MICROKERNEL_SRCS})
+  # LIST(APPEND PROD_MICROKERNEL_SRCS ${PROD_WASM_MICROKERNEL_SRCS})
   LIST(APPEND PROD_MICROKERNEL_SRCS ${WASM32_ASM_MICROKERNEL_SRCS})
 endif()
 
